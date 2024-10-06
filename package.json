@@ -1,0 +1,21 @@
+{
+  "name": "topearner",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installbackend": "cd ./backend && npm install",
+    "installfrontend": "cd ./frontend && npm install",
+    "postinstall": "npm run installbackend && npm run installfrontend",
+    "startbackend": "cd ./backend && npm start",
+    "startfrontend": "cd ./frontend && npm start",
+    "start": "concurrently \"npm run startbackend\" \"npm run startfrontend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
