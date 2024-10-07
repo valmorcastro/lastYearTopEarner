@@ -8,7 +8,6 @@ import {
   FaUserTie,
 } from "react-icons/fa";
 import { useCallback, useState } from "react";
-import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import classNames from "classnames";
@@ -46,9 +45,7 @@ const EmployeesList = () => {
     { lastYearTotal: totalB }
   ) => (totalB > totalA ? 1 : -1);
 
-  const handleViewToggle = () => {
-    setRenderCards(!renderCards);
-  };
+  const handleViewToggle = () => setRenderCards(!renderCards);
 
   const renderPopover = (id, title, total) => (
     <Popover id={`popover-${id}`}>
@@ -61,7 +58,7 @@ const EmployeesList = () => {
 
   const renderOverlayTrigger = (
     id,
-    placement = "right",
+    placement = "top",
     title,
     content,
     popoverContent
@@ -69,10 +66,10 @@ const EmployeesList = () => {
     <OverlayTrigger
       trigger={["hover", "focus"]}
       key={id}
-      placement={placement}
+      placement={"top"}
       overlay={renderPopover(id, title, popoverContent)}
     >
-      <div>{content}</div>
+      <span>{content}</span>
     </OverlayTrigger>
   );
 
@@ -194,7 +191,16 @@ const EmployeesList = () => {
                   <small>{id}</small>
                 </Card.Subtitle>
                 <Container fluid>
-                  <Row>
+                  <Row className="mb-1">
+                    <Col xs={5} className="g-0 text-end">
+                      <strong>
+                        <FaMapMarkedAlt />
+                        &nbsp;Location:
+                      </strong>
+                    </Col>
+                    <Col xs={7}>{locationsList?.[locationId]?.name || "-"}</Col>
+                  </Row>
+                  <Row className="mb-1">
                     <Col xs={5} className="g-0 text-end">
                       <strong>
                         <FaDollarSign />
@@ -207,27 +213,15 @@ const EmployeesList = () => {
                       </span>
                     </Col>
                   </Row>
-                  <Row>
+                  <Row className="mb-1">
                     <Col xs={5} className="g-0 text-end">
-                      <strong>
-                        <FaDollarSign />
-                        &nbsp;Last Year (Alpha):
-                      </strong>
+                      &nbsp;
                     </Col>
                     <Col xs={7}>
                       <span className="text-success">
-                        <strong>{formatCurrency(lastYearAlpha)}</strong>
+                        <strong>{formatCurrency(lastYearAlpha)} (Alpha)</strong>
                       </span>
                     </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={5} className="g-0 text-end">
-                      <strong>
-                        <FaMapMarkedAlt />
-                        &nbsp;Location:
-                      </strong>
-                    </Col>
-                    <Col xs={7}>{locationsList?.[locationId]?.name || "-"}</Col>
                   </Row>
                 </Container>
               </Card.Body>

@@ -8,6 +8,19 @@ const axiosInstance = axios.create({
 export const getTransactions = async () => {
   try {
     const response = await axios.get("/proxy/getTasks");
+
+    return response;
+  } catch (e) {
+    return { data: null };
+  }
+};
+
+export const postTransactions = async (data) => {
+  try {
+    const response = await axios.post("/proxy/sendTasks", data);
+    
+    debugger;
+
     return response;
   } catch (e) {
     return { data: null };

@@ -9,4 +9,10 @@ const getTransactions = async () => {
   return response;
 };
 
-module.exports = { getTransactions };
+const postTransactions = async (data) => {
+  const response = await axiosInstance.post("/submit-task", data);
+
+  return response;
+};
+
+module.exports = { getTransactions, postTransactions };

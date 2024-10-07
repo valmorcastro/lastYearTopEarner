@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { notificationsSelector } from "../selectors";
 
 const initialState = {
-  error: null,
+  notifications: [],
   loading: false,
 };
 
@@ -9,11 +10,19 @@ const clientSlice = createSlice({
   name: "clientContext",
   initialState,
   reducers: {
-    clearError: (state) => {
-      state.error = null;
+    clearNotifications: (state) => {
+      state.notifications = [];
     },
-    setError: (state, { payload }) => {
-      state.error = payload;
+    createNotification: (state, { payload }) => {
+      const notifications = notificationsSelector(state) || [];
+      notifications.push(payload);
+      state.notifications = notifications;
+    },
+    removeNotification: (state, { payload }) => {
+      const notifications = [
+        ...(state.notifications || []).filter(({ id }) => id !== payload),
+      ];
+      state.notifications = notifications;
     },
     startLoading: (state) => {
       state.loading = true;
@@ -24,7 +33,12 @@ const clientSlice = createSlice({
   },
 });
 
-export const { clearError, setErrorMessage, startLoading, stopLoading } =
-  clientSlice.actions;
+export const {
+  clearNotifications,
+  createNotification,
+  removeNotification,
+  startLoading,
+  stopLoading,
+} = clientSlice.actions;
 
 export default clientSlice.reducer;

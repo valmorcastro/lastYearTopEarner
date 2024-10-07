@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 
 const SummaryCard = ({
   extraClassnames = null,
+  icon = null,
   variant = "bg-secondary",
   title = "",
   text = "",
@@ -12,8 +13,9 @@ const SummaryCard = ({
     : "text-white";
 
   return (
-    <Card className={classNames("h-100", variant, textClass, extraClassnames)}>
+    <Card className={classNames("h-100 te_cmp_SummaryCard", variant, textClass, extraClassnames)}>
       <Card.Body>
+        {icon}
         <Card.Text>
           <small>{text}</small>
         </Card.Text>

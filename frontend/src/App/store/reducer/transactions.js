@@ -1,7 +1,8 @@
 import { ALPHA_TYPE, amountOrZero, LAST_YEAR } from "../../utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { startLoading, stopLoading } from "./client";
-import { getTransactions } from "../../API";
+import { createNotification, startLoading, stopLoading } from "./client";
+import { getTransactions, postTransactions } from "../../API";
+import { v4 } from "uuid";
 
 const initialState = {
   id: null,
@@ -141,7 +142,38 @@ export const fetchTransactions = createAsyncThunk(
 
     dispatch(stopLoading());
 
+    dispatch(
+      createNotification({
+        id: v4(),
+        title: "System notification",
+        text: "Transactions data succesffully loaded!",
+        timeStamp: new Date().getTime(),
+        variant: "success",
+      })
+    );
+
     return { id, transactions, employees, locations };
+  }
+);
+
+export const sendTransactions = createAsyncThunk(
+  "transactions/send",
+  async (data, { dispatch }) => {
+    dispatch(startLoading());
+
+    const { data: responseData } = await postTransactions(data);
+
+    dispatch(stopLoading());
+
+    dispatch(
+      createNotification({
+        id: v4(),
+        title: "System notification",
+        text: "Transactions successfully submitted!",
+        timeStamp: new Date().getTime(),
+        variant: "success",
+      })
+    );
   }
 );
 

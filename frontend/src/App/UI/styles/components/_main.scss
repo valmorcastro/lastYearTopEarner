@@ -1,4 +1,6 @@
-.te_cmp_Main {
-  flex: 1 1 calc(100vh - 130px);
-  overflow: hidden;
+.te_is_not_mobile {
+  .te_cmp_Main {
+    flex: 1 1 calc(100vh - 130px);
+    overflow: hidden;
+  }
 }

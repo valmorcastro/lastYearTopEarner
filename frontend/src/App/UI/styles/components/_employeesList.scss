@@ -6,3 +6,9 @@
     flex: 1 1 40%;
   }
 }
+
+.te_is_mobile {
+  .te_cmp_EmployeesList .card {
+    flex: 1 0 100% !important;
+  }
+}

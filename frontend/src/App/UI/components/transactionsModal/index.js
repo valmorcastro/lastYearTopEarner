@@ -147,10 +147,18 @@ const TransactionsModal = ({ employeeId, handleClose, showModal }) => {
           <Table bordered striped>
             <thead>
               <tr>
-                <th>Transaction ID</th>
-                <th className="text-center">Amount</th>
-                <th className="text-center">Type</th>
-                <th className="text-center">Date</th>
+                <th className="text-center">
+                  <small>ID</small>
+                </th>
+                <th className="text-center">
+                  <small>Amount</small>
+                </th>
+                <th className="text-center">
+                  <small>Type</small>
+                </th>
+                <th className="text-center">
+                  <small>Date</small>
+                </th>
               </tr>
             </thead>
             <tbody>{renderTransactions()}</tbody>

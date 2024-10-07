@@ -7,7 +7,7 @@ import Spinner from "react-bootstrap/Spinner";
 const LoadingIndicator = () => (
   <Container className="h-100">
     <Row className="h-100 d-flex align-items-center justify-content-center">
-      <Col xs={3}>
+      <Col xs={6} sm={2}>
         <Card className="bg-dark text-white">
           <Card.Body className="d-flex align-items-center">
             <Spinner /> <div className="mx-3">Loading...</div>
