@@ -1,0 +1,5 @@
+.te_cmp_Notification {
+  border-radius: calc(
+    var(--bs-toast-border-radius) - var(--bs-toast-border-width)
+  );
+}
