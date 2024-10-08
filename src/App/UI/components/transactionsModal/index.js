@@ -125,7 +125,7 @@ const TransactionsModal = ({ employeeId, handleClose, showModal }) => {
             <strong>{formatCurrency(lastYearAlphaTotal)}</strong>
           </span>
         </div>
-        <div className="mt-3 d-flex flex-column align-items-end justify-content-stretch">
+        <div className="mt-2 d-flex flex-column align-items-end justify-content-stretch">
           <div className="col-4 g-0 flex-grow-0">
             <Form.Check
               type="switch"

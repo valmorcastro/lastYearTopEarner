@@ -82,7 +82,7 @@ const TransactionsSummary = () => {
 
   return (
     <Container fluid className="te_cmp_TransactionsSummary">
-      <Row className="mt-3">
+      <Row className="mt-2">
         <Col>
           <h3 className="d-flex align-items-center">
             <FaClipboardList />
@@ -90,7 +90,7 @@ const TransactionsSummary = () => {
           </h3>
         </Col>
       </Row>
-      <Row className="mt-3">{renderSummaryInfo()}</Row>
+      <Row className="mt-2">{renderSummaryInfo()}</Row>
     </Container>
   );
 };

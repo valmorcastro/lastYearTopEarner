@@ -74,7 +74,7 @@ const EmployeesList = () => {
   );
 
   const renderEmployeesTable = () => (
-    <Table bordered striped className="mb-3">
+    <Table bordered striped className="mb-2">
       <thead>
         <tr>
           <th className="text-center">
@@ -155,7 +155,7 @@ const EmployeesList = () => {
   );
 
   const renderEmployeesCards = () => (
-    <div className="d-flex flex-row flex-wrap align-content-around justify-space-around card-container mb-3">
+    <div className="d-flex flex-row flex-wrap align-content-around justify-space-around card-container mb-2">
       {[...employees]
         .sort(sortByLastYear)
         .map(
@@ -238,8 +238,8 @@ const EmployeesList = () => {
     isMobile || renderCards ? renderEmployeesCards() : renderEmployeesTable();
 
   return (
-    <Container className="te_cmp_EmployeesList h-100 d-flex flex-column justify-content-stretch te_hide_overflow">
-      <Row className="mt-3 flex-grow-0">
+    <Container className="te_cmp_EmployeesList h-100 d-flex flex-column justify-content-stretch te_hide_overflow mt-1">
+      <Row className="mt-2 flex-grow-0">
         <Col className="d-flex align-items-center justify-content-between">
           <h3 className="d-flex align-items-center">
             <FaUserTie />
@@ -254,7 +254,7 @@ const EmployeesList = () => {
           </Button>
         </Col>
       </Row>
-      <Row className="mt-3 flex-grow-1 te_hide_overflow">
+      <Row className="mt-2 flex-grow-1 te_hide_overflow">
         <Col>
           <div className="te_scrollable_wrapper">{renderEmployees()}</div>
         </Col>

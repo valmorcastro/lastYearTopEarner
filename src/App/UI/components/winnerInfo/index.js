@@ -27,8 +27,8 @@ const WinnerInfo = () => {
   } = winner || {};
 
   return (
-    <Container className="te_cmp_WinnerInfo h-100 d-flex flex-column justify-content-stretch te_hide_overflow">
-      <Row className="mt-3 flex-grow-0">
+    <Container className="te_cmp_WinnerInfo h-100 d-flex flex-column justify-content-stretch te_hide_overflow mt-1">
+      <Row className="mt-2 flex-grow-0">
         <Col className="d-flex align-items-center justify-content-between">
           <h3 className="d-flex align-items-center">
             <FaTrophy />
@@ -36,14 +36,14 @@ const WinnerInfo = () => {
           </h3>
         </Col>
       </Row>
-      <Row className="mt-3 flex-grow-1">
+      <Row className="mt-2 flex-grow-1">
         <Col className="h-100">
           <Card className="bg-success bg-opacity-75 text-white">
             <Card.Body>
-              <Card.Title className="text-center mb-3 display-6">
+              <Card.Title className="text-center mb-2 display-6">
                 <span
                   className={classNames(
-                    "text-center mb-3 display-6 te_employee_name",
+                    "text-center mb-2 display-6 te_employee_name",
                     categoryCode && `category-${categoryCode}`
                   )}
                 >
