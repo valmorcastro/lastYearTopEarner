@@ -24,7 +24,6 @@ const WinnerInfo = () => {
     name = null,
     categoryCode = null,
     lastYearTotal = 0,
-    lastYearAlphaTransactions = [],
   } = winner || {};
 
   return (
@@ -56,18 +55,6 @@ const WinnerInfo = () => {
                 <strong>{formatCurrency(lastYearTotal)}</strong> in transactions
                 in <strong>{LAST_YEAR}</strong>, being the last year's top
                 earner.
-                <br />
-                <br />
-                <strong className="mb-1">
-                  Last Year's Alpha Transactions (
-                  {lastYearAlphaTransactions?.length || 0}):
-                </strong>
-                <br />
-                <small>
-                  {lastYearAlphaTransactions
-                    ?.map(({ transactionID }) => transactionID)
-                    ?.join?.(", ")}
-                </small>
               </Card.Text>
               <Card.Footer className="d-grid gap-2">
                 <Button
