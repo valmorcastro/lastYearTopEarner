@@ -1,4 +1,12 @@
 .te_cmp_NotificationsContainer {
   bottom: 1.5rem;
   right: 1.5rem;
+
+  &.te_is_mobile {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    width: calc(100vw - 3rem);
+  }
 }

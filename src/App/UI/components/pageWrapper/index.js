@@ -18,7 +18,7 @@ const PageWrapper = ({ children = null, pageClassName = null }) => (
       <Main>{children}</Main>
       <Footer />
     </div>
-    <NotificationsContainer />
+    <NotificationsContainer className={isMobile ? "te_is_mobile" : "te_is_not_mobile"} />
   </>
 );
 

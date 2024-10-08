@@ -64,7 +64,7 @@ const Notification = ({ id, timeStamp, title, text, variant }) => {
       show={true}
       onClose={() => dismissNotification(id)}
       delay={DELAY}
-      className="te_cmp_Notification"
+      className="te_cmp_Notification mx-auto"
       autohide
     >
       <div className="bg-fade bg-white bg-opacity-25">
